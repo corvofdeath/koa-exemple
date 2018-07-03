@@ -1,0 +1,25 @@
+{
+  "name": "koa-exemple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node entry.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corvofdeath/koa-exemple.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corvofdeath/koa-exemple/issues"
+  },
+  "homepage": "https://github.com/corvofdeath/koa-exemple#readme",
+  "dependencies": {
+    "esm": "^3.0.61",
+    "koa": "^2.5.1",
+    "koa-body": "^4.0.4"
+  }
+}
