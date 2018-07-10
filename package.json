@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node entry.js"
+    "start": "nodemon entry.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "esm": "^3.0.61",
     "koa": "^2.5.1",
-    "koa-body": "^4.0.4"
+    "koa-body": "^4.0.4",
+    "koa-router": "^7.4.0"
   }
 }
