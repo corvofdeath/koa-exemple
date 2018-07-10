@@ -1,7 +1,6 @@
 export default class UserController {
 
     constructor() {
-
     }
 
     index(context) {
