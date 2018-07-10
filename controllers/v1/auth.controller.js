@@ -11,17 +11,17 @@ export default class AuthController {
             const { name, email, password } = ctx.request.body;
 
             if (!name || !email || !password)
-                return context.throw(400, { status: 'error', message: 'Invalid payload' });
+                return ctx.throw(400, { status: 'error', message: 'Invalid payload' });
 
             let user = await User.findOne({ email });
 
             if (user)
-                return context.throw(400, { status: 'error', message: 'E-mail already registered' })
+                return ctx.throw(400, { status: 'error', message: 'E-mail already registered' })
 
             user = new User({ name, email, password });
             await user.save();
 
-            ctx.passport = {
+            ctx.state = {
                 user: user._id,
             };
 
@@ -29,7 +29,7 @@ export default class AuthController {
             
         } catch (error) {
             console.error(error);
-            return context.throw(400, error);
+            return ctx.throw(400, error);
         }
     }
 }
