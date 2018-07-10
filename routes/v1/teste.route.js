@@ -1,4 +1,4 @@
-import TesteController from '../../controllers/teste.controller';
+import TesteController from '../../controllers/v1/teste.controller';
 import Router from 'koa-router';
 
 const controller = new TesteController();
