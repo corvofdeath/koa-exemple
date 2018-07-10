@@ -1,13 +1,18 @@
+import User from '../../models/user.model';
+
 export default class UserController {
 
     constructor() {
     }
 
-    index(context) {
-        return context.body = "User index result";
-    }
+    async index(ctx) {
 
-    all(context) {
-        return context.body = "User all result";
+        try {
+            let users = await User.find();
+            return ctx.body = users;
+        } catch (error) {
+            console.error(error);
+            return context.throw(400, error);
+        }
     }
 }

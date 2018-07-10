@@ -3,8 +3,8 @@ import bodyParser from 'koa-body';
 
 import config from '../config/config';
 import database from '../config/datasource';
-import api from '../routes/routes';
-import routes from '../routes/routes';
+import api from '../routes';
+import auth from '../auth';
 
 class Server {
 
@@ -16,6 +16,7 @@ class Server {
 
         // midlewares
         this.app.use(bodyParser());
+        this.app.use(auth());
         this.app.use(api.routes());
     }
 
