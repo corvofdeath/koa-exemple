@@ -1,6 +1,8 @@
 import Koa from 'koa';
 import bodyParser from 'koa-body';
 
+import config from '../config/config';
+import database from '../config/datasource';
 import api from '../routes/routes';
 import routes from '../routes/routes';
 
@@ -18,6 +20,8 @@ class Server {
     }
 
     async start(port) {
+
+        await database.connect(config);
     
         await new Promise(resolve => this.app.listen(port, resolve));
 
